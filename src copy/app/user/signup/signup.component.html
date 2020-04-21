@@ -1,0 +1,21 @@
+<div>
+    <form >
+      <label for="fname">First Name</label>
+      <input id="name" type="text" placeholder="Enter Your First Name" name="firstname"  [(ngModel)]="firstName" required autofocus>
+  
+      <label for="lname">Last Name</label>
+      <input id="lastName" type="text" placeholder="Enter Your Last Name" name="lastName" [(ngModel)]="lastName"  required>
+
+      <label for="lname">Mobile number</label>
+      <input id="Mobile" type="number" placeholder="Enter Your Mobile"[(ngModel)]="mobile" name="mobile" required>
+ 
+      <label for="lname">email</label>
+      <input id="email" type="email" placeholder="Enter Your Email Address" name="email" [(ngModel)]="email" required>
+
+      <label for="lname">password</label>
+      <input id="password" type="password" placeholder="Enter Password" name="password" [(ngModel)]="password" required>
+     
+     
+      <button class="btn" type="submit" (click)="signupFunction()" >SignUp</button>
+    </form>
+  </div>

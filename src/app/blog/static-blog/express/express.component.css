@@ -1,0 +1,183 @@
+.text1{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    
+
+    width: 100%;
+    height: 30vh;
+    outline: none;
+    resize: none;
+    border: 1px solid rgb(27, 27, 27);
+    background-color: rgb(22, 19, 19);
+    color: white;
+}
+
+
+.text2{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    outline: none;
+    resize: none;
+    border: 1px solid grey;
+    height: 4vh;
+    background-color: rgb(22, 19, 19);
+    color: white;
+}
+
+.text3{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    outline: none;
+    resize: none;
+    border: 1px solid grey;
+    height: 28vh; 
+    background-color: rgb(22, 19, 19);
+    color: white;
+}
+
+.text4{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    
+
+    width: 100%;
+    height: 33vh;
+    outline: none;
+    resize: none;
+    border: 1px solid rgb(27, 27, 27);
+    background-color: rgb(22, 19, 19);
+    color: white;   
+}
+
+ .text5{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    
+
+    width: 100%;
+    height: 33vh;
+    outline: none;
+    resize: none;
+    border: 1px solid rgb(27, 27, 27);
+    background-color: rgb(22, 19, 19);
+    color: white;  
+}
+
+.text6{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    
+
+    width: 100%;
+    height: 8vh;
+    outline: none;
+    resize: none;
+    border: 1px solid rgb(27, 27, 27);
+    background-color: rgb(22, 19, 19);
+    color: white;  
+}
+
+.text7{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    
+
+    width: 100%;
+    height: 10vh;
+    outline: none;
+    resize: none;
+    border: 1px solid rgb(27, 27, 27);
+    background-color: rgb(22, 19, 19);
+    color: white;  
+}  
+
+.text8{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    
+
+    width: 100%;
+    height: 26vh;
+    outline: none;
+    resize: none;
+    border: 1px solid rgb(27, 27, 27);
+    background-color: rgb(22, 19, 19);
+    color: white;  
+}
+
+.text9{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    
+
+    width: 100%;
+    height: 19vh;
+    outline: none;
+    resize: none;
+    border: 1px solid rgb(27, 27, 27);
+    background-color: rgb(22, 19, 19);
+    color: white;  
+}
+.button-groups {
+    display: grid;
+    gap: 0.5rem;
+
+    /* 1 too skinny, too much code */
+     grid-template-columns: 1fr 1fr ; 
+  
+    /* 2 cleaner code */
+    /* grid-template-columns: repeat(12, 1fr); */
+  
+    /* 3  better sizing, but overflows */
+    /* grid-template-columns: repeat(12, minmax(240px, 1fr)); */
+  
+    /* 4 final 
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    */
+ }
+
+ .button1 {
+     padding: 10px 24px;
+    
+}
+
+.button {
+
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #e7e7e7; 
+    color: black;
+    border-radius: 2px;
+  }
+
+  .button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+  .button-groups{
+      margin-bottom: 10vh;
+  }

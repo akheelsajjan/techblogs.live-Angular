@@ -1,0 +1,89 @@
+<header class="header-fixed">
+
+	<div class="header-limiter"  *ngIf="currentBlog">
+
+		<h1><a> <span>{{currentBlog.title}}</span></a></h1>
+
+    </div>
+  
+</header>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="author-view">
+    Author: {{currentBlog.author}}<br>
+    Posted on: {{currentBlog.created | date}}<br>
+    views: {{currentBlog.views}}<br>
+</div>
+<br>
+<br>
+<br>
+
+
+
+<div class="description">
+    {{currentBlog.description}}
+    <hr>
+    {{currentBlog.bodyHtml}}
+
+    <!--Express-->
+    <div *ngIf="express">
+        <app-express></app-express>
+    </div>
+
+
+ <!--Node js-->
+    <div *ngIf="nodejs" >
+       <div class="nodejs">
+        Open-source
+        cross-platform
+        JavaScript<br>
+
+       </div>
+        
+        <p>
+            <span>
+                <h2>What is Nodejs?</h2>
+                <p>
+                    NodeJS is runtime Javascript environment to run Javascript outside the browser.<br>
+                    It is Open-source, cross-platform & written in  c c++ & Javascript.<br><br>
+
+                    NodeJS allows us to write Javascript on server-side. So we can use Javascript both<br>
+                    on frontend and backend, NodeJS makes "JavaScript everywhere".<br><br>
+
+                    There are many frameWorks written in Javascript. One of them is Express with  which <br>
+                    we can built REST API'S <br><br>
+
+                   
+                </p>
+
+
+
+            </span>
+        </p>
+        Learn to built REST API's using  Express<br>
+        <div class="button-groups">
+            <div class="">
+                <button class="button button1"  (click)="expressblog()">Express</button>
+            </div>
+        </div>
+    </div>
+
+     <!--REST API-->
+
+
+  <div *ngIf="restapi">
+      Comming Soon!! until that click the button to learn Express<br>
+    <div class="button-groups">
+        <div class="">
+            <button class="button button1"  (click)="expressblog()">Express</button>
+        </div>
+    </div>
+    </div>
+
+
+
+

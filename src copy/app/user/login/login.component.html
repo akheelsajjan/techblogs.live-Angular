@@ -1,0 +1,12 @@
+<div>
+    <form >
+      <label for="lname">email</label>
+      <input id="email" type="email" placeholder="Enter Your Email Address" name="email" [(ngModel)]="email" required>
+
+      <label for="lname">password</label>
+      <input id="password" type="password" placeholder="Enter Password" name="password" [(ngModel)]="password" required>
+     
+     
+      <button class="btn" type="submit"  (click)="signinFunction()" >LogIn</button>
+    </form>
+  </div>

@@ -1,0 +1,19 @@
+<section class="basic-grid" *ngIf="allBlogs.length > 0">
+    <div *ngFor="let blog of allBlogs" style="list-style-type:none">
+        <a [routerLink]="['/blog',blog.blogId]">
+            <div class="card">
+                <div class="blog-title ">
+                    {{blog.title | uppercase}}
+                 </div>
+                
+                   <div class="author">
+                    Posted on {{blog.created | date}}
+                   </div>
+            </div>
+        </a>
+            
+        
+    </div>
+
+</section>
+

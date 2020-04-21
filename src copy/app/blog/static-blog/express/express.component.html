@@ -1,0 +1,303 @@
+<div>
+    
+   
+<div *ngIf="page1" #scrollMe [scrollTop]="(scrollToChatTop)?0:scrollMe.scrollHeight">
+    <p>
+        <b> What is Express? </b><br>
+        It is a web application framework which run's under Nodejs environment.
+        It is used in writing backend applications.
+        <br>
+        <br>
+        <b> Why Express?</b> <br>
+        Robust set of features for development.
+        Provides well tested middleware to achieve the functionality .
+        <br>
+        <span><h2 style="color: rgb(211, 223, 56);">Nodejs must be installed to follow along</h2></span>
+        <br>
+        <b> Using your NPM init </b> <br>
+        Prerequisite - installed Nodejs on your machine. Express uses NPM - node package manager.
+        Open an editor of your choice( preferably vs code editor)
+        Click on new terminal and,
+        Enter the following command
+        <br>
+        <br>
+        npm init
+        (Hit enter for now)
+        <br>
+        <textarea class="text1" disabled>
+{  
+  "name": "index.js",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "description": ""
+  }
+    </textarea>
+    <br>
+    <br>
+       
+        <b>Install Express</b>
+        <br>
+
+        <textarea class="text2" disabled> npm install express --save </textarea>
+        <br>
+        <br>
+        <b> Creating your Hello World application</b> <br>
+
+        Create a file named <i>index.js</i><br>
+
+       
+           <textarea class="text3" disabled>
+
+ const express = require('express');
+
+ const app = express();
+
+ const port = 3000;
+
+ app.get('/', (req, res) => res.send('Hello World!'));
+
+ app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
+ </textarea>
+<br>
+<br>
+ In the command prompt type 
+ <br>
+ <textarea class="text2" disabled>node index.js </textarea>
+   <br>
+   app starts a server and listens on port 3000 with hello world for the request to root url.
+<br>
+
+Hit localhost:3000 on your browser and see the output.  
+
+
+    </p>
+    <div class="button-groups">
+        <div class="">
+            <button class="button button1"  (click)="page2view()">Configuration</button>
+        </div>
+    </div>
+   
+
+
+
+</div>
+
+<!--End of page 1-->
+<div *ngIf="page2" #scrollMe [scrollTop]="(scrollToChatTop)?0:scrollMe.scrollHeight">
+    <h2>Configurations</h2>
+    <p>
+ <span>
+    <b><u>Five major configurations</u></b>
+    <ol>
+        <li>
+            Application port - port at which the application is supposed to run 
+        </li>
+        <li>allowed Origins - Domains or origin which are allowed to access the 
+            application. If there is a mismatch, then it throws a CORS error.
+        </li>
+        <li>Environment - Which environment
+             are you are working for. 
+        </li>
+        <li>Database url - Url with credentials at which database is hosted.</li>
+        <li>version - Version of your current API.
+        </li>
+    </ol>
+    <br>
+    <br>
+    Create a file appconfig.js and write the following code
+<br>
+    <textarea class="text4" disabled>
+let ipconfig = {};
+
+appConfig.port = 3000;
+
+appConfig.allowedCorsOrigin = "*";
+
+appConfig.env = "dev";
+
+appConfig.db = {
+ uri: 'mongodb://127.0.0.1:27017/<nameofDb>',
+  };
+
+ appConfig.apiVersion = '/api/v1';
+        </textarea>
+        <br>
+        <b><u>Exporting </u></b>
+        <br>
+        <br>
+        module.exports is an object that the current module returns when
+        it is required by another program or module.
+        <br>
+        write this peace of code at the end of appconfile.js 
+        <br>
+        <textarea class="text5" disabled>
+module.exports = {
+
+    port: appConfig.port,
+
+    allowedCorsOrigin: appConfig.allowedCorsOrigin,
+
+    env: appConfig.env,
+
+    db: appConfig.db,
+
+    apiVersion: appConfig.apiVersion
+    
+}           
+</textarea>
+<br>
+<br>
+Add the following lines in index.js.  
+<br>
+<textarea class="text6" disabled>
+const config = require('./config/appconfig');
+const port = config.port;
+</textarea>
+ </span>
+
+
+
+    </p>
+    <br>
+    <br>
+    <div class="button-groups">
+        <div class="">
+            <button class="button button1"  (click)="ngOnInit()">Introduction</button>
+        </div>
+        <div class="">
+            <button class="button button1"  (click)="page3view()">Routing</button>
+        </div>
+    </div>
+   
+</div>
+<!--End of Page 2-->
+<div *ngIf="page3"  #scrollMe [scrollTop]="(scrollToChatTop)?0:scrollMe.scrollHeight">
+    <p><span>   
+        <h2>Routes</h2><br>
+         Create the route folder and file inside it.<br>
+	     let's name the route as route-blog.js<br><br>
+
+         Create a function<br>
+         <textarea class="text7" disabled>
+let setRouter = (app)=>{
+
+}
+         </textarea><br><br>
+
+         Inside this function we shall write necessary routes.<br>
+         <textarea class="text7" disabled>
+ let setRouter = (app)=>{
+  app.get('/');
+ }
+             </textarea><br><br>
+             Let's Attach the necessary callback function.<br>
+<textarea class="text8" disabled>
+let setRouter = (app)=>{
+  helloWorld = (req,res) =>{
+     res.send("hello World");
+    }
+  app.get('/', helloWorld);
+ }
+
+ module.exports = {
+    setRouter: setRouter
+}
+  </textarea><br><br>
+
+  Include the routes in <u>index.js  </u>and call the function setRouter.<br><br>
+  
+  <textarea class="text8" disabled>
+    const fs = require('fs');
+    let routePath = './routes';
+    
+    fs.readdirSync(routePath).forEach( (file)=>{
+        if(~file.indexOf('.js')){
+             route = require(routePath + '/'+ file);
+             route.setRouter(app);
+        }
+    })
+      </textarea><br><br>
+      Here We are trying to read the routes folder, and if it has .js extension<br>
+      we are including it and calling the necessary function.<br><br>
+
+      <div class="button-groups">
+        <div class="">
+            <button class="button button1"  (click)="page2view()">Introduction</button>
+        </div>
+        <div class="">
+            <button class="button button1"  (click)="page4view()">Routing</button>
+        </div>
+    </div>
+      
+    </span>
+    </p>
+    
+</div>
+<div *ngIf="page4"  #scrollMe [scrollTop]="(scrollToChatTop)?0:scrollMe.scrollHeight">
+   
+
+
+
+    
+
+        <h2>Controllers</h2><br>
+
+        <p>
+            <span>
+                Let's keep the logical part separate from routes,<br> to get better  control  over
+                your code.<br><br>
+                
+                Create the controller folder and file 
+                Name the file as blog-controler.js<br><br>
+                
+                Create the function in controllers and export them
+                Cut and paste the logical part of your code  from route-blog.js<br><br>
+
+                <textarea class="text9" disabled>
+ helloWorld = (req,res) =>{
+   res.send("hello World!!");
+ }
+                    
+ module.exports = {
+    helloWorld:helloWorld
+ }
+
+                      </textarea><br><br>
+
+                      Attach the controller function to the desired route<br>
+                     in route-blog.js<br>
+                     <textarea class="text9" disabled>
+ const  blogController = require('../controllers/blog-controller');
+
+   let setRouter = (app)=>{
+
+     app.get('/hello', blogController .helloWorld);
+ }
+                          </textarea><br><br>
+
+
+            </span>
+        </p>
+        <div class="button-groups">  
+        <div class="">
+            <button class="button button1"  (click)="page3view()">Routing</button>
+        </div>
+        <div class="">
+            <button class="button button1"  (click)="page5view()">REST API</button>
+        </div>
+    </div>
+
+    <button>Page5</button>
+</div>
+<div *ngIf="page5">
+    page5
+    <button>Page1</button>
+</div>
+
+
+</div>

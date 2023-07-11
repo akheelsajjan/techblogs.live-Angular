@@ -21,7 +21,7 @@
     "@angular/router": "~9.1.0",
     "bootstrap": "^4.4.1",
     "cookie": "^0.4.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ng2-cookies": "^1.0.12",
     "ngentest": "^1.4.0",
     "ngx-bootstrap": "^5.5.0",
